@@ -11,10 +11,11 @@ using Vertex_t = std::size_t;
 // без гарантии исключений
 class Graph final {
     std::vector<std::vector<Vertex_t>> adjs_;
-    std::size_t E_;
+    std::size_t E_ = 0;
 
 public:
     Graph(std::size_t V) : adjs_(V) {}
+    Graph() = default;
 
 public:
     void addEdge(Vertex_t v, Vertex_t w) {

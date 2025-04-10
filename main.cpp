@@ -1,6 +1,7 @@
 #include <cstddef>
 #include <exception>
 #include <iostream>
+#include <fstream>
 
 #include "src/graph.hpp"
 

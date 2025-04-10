@@ -31,7 +31,9 @@ public:
     }
 
 public:
-    bool connected(graph::Vertex_t v, graph::Vertex_t w) const;
+    bool connected(graph::Vertex_t v, graph::Vertex_t w) const {
+        return ids_[v] == ids_[w];
+    }
 
     Id_t id(graph::Vertex_t v) const;
 };

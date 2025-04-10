@@ -35,7 +35,9 @@ public:
         return ids_[v] == ids_[w];
     }
 
-    Id_t id(graph::Vertex_t v) const;
+    Id_t id(graph::Vertex_t v) const {
+        return ids_[v];
+    }
 };
 
 } // namespace cc 

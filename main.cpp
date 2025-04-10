@@ -27,9 +27,20 @@ namespace {
     }
 } // namespace
 
+// входные данные:
+// 1 строка : число V - количество вершин
+// 2 строка : число E - количество ребер
+// 3 - E+3 строки : v w ребро графа
+int main(int argc, char** argv) try { 
+    graph::Graph g;
 
-int main() try { 
-    auto g = readGraph(std::cin);
+    if (argc != 2) {
+        g = readGraph(std::cin);
+    } else {
+        std::ifstream ifs(argv[1]);
+        g = readGraph(ifs);
+    }
+
 } catch (const std::exception& e) {
     std::cerr << e.what() << std::endl;
 } catch (...) {

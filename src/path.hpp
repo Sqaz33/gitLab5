@@ -41,7 +41,13 @@ public:
     { bfs_(g, src); }
 
 public:
-    std::vector<Vertex_t> pathTo(Vertex_t v);
+    std::vector<Vertex_t> pathTo(Vertex_t v) {
+        std::vector<Vertex_t> p;
+        for (auto s = v; s != src_; s = pathTo_[s]) 
+            p.push_back(s);
+        p.push_back(src_);
+        return p;
+    }
 };
 
 } // namespace path

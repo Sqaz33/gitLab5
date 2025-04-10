@@ -35,7 +35,10 @@ class Path final {
     }
 
 public:
-    Path(const graph::Graph& g, Vertex_t src);
+    Path(const graph::Graph& g, Vertex_t src) : 
+        src_(src),
+        pathTo_(g.V(), 0)
+    { bfs_(g, src); }
 
 public:
     std::vector<Vertex_t> pathTo(Vertex_t v);

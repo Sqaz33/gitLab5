@@ -5,6 +5,7 @@
 #include "src/graph.hpp"
 
 namespace {
+    // прочитать граф из входного потока 
     graph::Graph readGraph(std::istream& is) {
         using namespace graph;
 

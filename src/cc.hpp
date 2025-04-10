@@ -18,12 +18,22 @@ class CC final {
     void dfs(const graph::Graph& g) {}
 
 public:
-    CC(const graph::Graph& g) {}
+    CC(const graph::Graph& g)  :
+        ids_(g.V())
+        , marked_(g.V(), false)
+    {   
+        for (graph::Vertex_t s = 0; s < g.V(); ++s) {
+            if (!marked_[s]) {
+                dfs_(g, s);
+                ++count_;
+            } 
+        }
+    }
 
 public:
-    bool connected(graph::Vertex_t v, graph::Vertex_t w) const {}
+    bool connected(graph::Vertex_t v, graph::Vertex_t w) const;
 
-    Id_t id(graph::Vertex_t v) const {}
+    Id_t id(graph::Vertex_t v) const;
 };
 
 } // namespace cc 

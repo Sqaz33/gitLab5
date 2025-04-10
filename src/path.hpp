@@ -11,6 +11,7 @@ namespace path {
      
 
 // без гарантии исключений
+// только для связных графов
 class Path final {
     using Vertex_t = graph::Vertex_t;
 
